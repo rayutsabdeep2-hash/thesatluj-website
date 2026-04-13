@@ -151,11 +151,7 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section id="hero" style="height: 400vh; position: relative;">
-            <!-- Canvas (replaces static background) -->
-            <canvas id="hero-canvas"></canvas>
-            
-            <!-- Static Fallback for low-memory/reduced-motion -->
-            <div class="hero-bg" style="display: none;"></div>
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" alt="Himalayan mountain sunrise snow peaks" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" decoding="async">
             
             <!-- Existing gradient overlay - now fixed -->
             <div class="hero-overlay"></div>
@@ -220,7 +216,7 @@
 
         <!-- About Section -->
         <section id="about" class="section-padding bg-offwhite">
-            <div class="container-center about-inner">
+            <div class="container-center about-inner fade-up">
                 <div class="flex flex-col desktop:flex-row items-center gap-[48px] desktop:gap-[80px]">
                     <div class="w-full desktop:w-1/2">
                         <img src="assets/images/aboutus/aboutus.webp" loading="lazy" decoding="async" width="800" height="600" class="w-full aspect-[4/3] object-cover rounded-[12px] shadow-sm" alt="Mountain hotel exterior himalayan view">
@@ -235,28 +231,28 @@
 
                 <div class="mt-[64px] desktop:mt-[80px] pt-[48px] border-t border-black/[0.05] about-stats">
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-[32px] desktop:gap-[48px]">
-                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left">
+                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left fade-up-stagger">
                             <span class="text-[32px] mb-3">🏔</span>
                             <div>
                                 <p class="heading-4 !text-[18px] mb-1">9,711 ft</p>
                                 <p class="metadata !text-meta !normal-case">Altitude</p>
                             </div>
                         </div>
-                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left">
+                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left fade-up-stagger">
                             <span class="text-[32px] mb-3">🍎</span>
                             <div>
                                 <p class="heading-4 !text-[18px] mb-1">Apple Orchards</p>
                                 <p class="metadata !text-meta !normal-case">At Your Door</p>
                             </div>
                         </div>
-                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left">
+                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left fade-up-stagger">
                             <span class="text-[32px] mb-3">🛏</span>
                             <div>
                                 <p class="heading-4 !text-[18px] mb-1">10 Rooms</p>
                                 <p class="metadata !text-meta !normal-case">Boutique Experience</p>
                             </div>
                         </div>
-                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left">
+                        <div class="stat-item flex flex-col items-center desktop:items-start text-center desktop:text-left fade-up-stagger">
                             <span class="text-[32px] mb-3">⭐</span>
                             <div>
                                 <p class="heading-4 !text-[18px] mb-1">4.8 Rated</p>
@@ -290,10 +286,10 @@
                     <p class="body-text text-meta">Every room opens to the sacred Kinnaur Kailash range</p>
                 </div>
                 
-                <div class="room-card max-w-[1050px] mx-auto bg-white rounded-[12px] border border-black/[0.05] overflow-hidden flex flex-col desktop:flex-row shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="room-card max-w-[1050px] mx-auto bg-white rounded-[12px] border border-black/[0.05] overflow-hidden flex flex-col desktop:flex-row shadow-sm hover:shadow-md transition-shadow duration-300 fade-up">
                     <!-- Carousel Area -->
                     <div class="w-full desktop:w-[55%] relative group">
-                        <div id="room-carousel" class="w-full aspect-[4/3] desktop:h-full relative overflow-hidden bg-gray-100">
+                        <div id="room-carousel" class="w-full aspect-[4/3] desktop:h-full relative overflow-hidden bg-gray-100" role="region" aria-label="Room images" aria-live="polite">
                             <img src="assets/images/rooms/room-1.webp" loading="lazy" decoding="async" width="800" height="600" class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" alt="Standard Room Interior - View 1">
                             <img src="assets/images/rooms/room-2.webp" loading="lazy" decoding="async" width="800" height="600" class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-0" alt="Standard Room Interior - View 2">
                             <img src="assets/images/rooms/room-3.webp" loading="lazy" decoding="async" width="800" height="600" class="carousel-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-0" alt="Standard Room Interior - View 3">
@@ -302,12 +298,13 @@
                             
                             <!-- Dots -->
                             <div id="carousel-dots" class="absolute bottom-[24px] left-0 right-0 flex justify-center gap-2 z-20">
-                                <button class="carousel-dot active w-[8px] h-[8px] rounded-full bg-white transition-all shadow-sm" aria-label="Go to slide 1"></button>
-                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 2"></button>
-                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 3"></button>
-                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 4"></button>
-                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 5"></button>
+                                <button class="carousel-dot active w-[8px] h-[8px] rounded-full bg-white transition-all shadow-sm" aria-label="Go to slide 1" aria-current="true"></button>
+                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 2" aria-current="false"></button>
+                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 3" aria-current="false"></button>
+                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 4" aria-current="false"></button>
+                                <button class="carousel-dot w-[8px] h-[8px] rounded-full bg-white/40 transition-all" aria-label="Go to slide 5" aria-current="false"></button>
                             </div>
+                            <div class="sr-only" aria-live="polite" aria-atomic="true" id="carousel-status">Slide 1 of 5</div>
                         </div>
                     </div>
                     
@@ -355,22 +352,17 @@
             </div>
             
             <!-- Dual Overlay for Better Contrast -->
-            <div class="absolute inset-0 z-[1]" style="background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%);"></div>
+            <div class="absolute inset-0 z-[1]" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.75) 100%);"></div>
             
-            <div class="cafe-content relative z-10 flex flex-col items-center justify-center text-center px-6 py-20 max-w-[700px] w-full">
-                <p class="section-label !text-white/80 mb-4">Dine with a View</p>
-                <h2 class="heading-2 text-white mb-6" style="text-shadow: 0 4px 30px rgba(0,0,0,0.4);">Hippie Hangout Café</h2>
-                <p class="body-text text-white/90 mb-4">Sip fresh coffee in our 360° transparent glass café, where every meal is served with a panoramic view of the Himalayas.</p>
-                <p class="metadata !text-white/60 !normal-case tracking-normal mb-10">Multi-cuisine · Open 8 AM — 8 PM · Inside Apple Orchards</p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://wa.me/919874068999?text=Hi!%20Can%20you%20share%20the%20café%20menu%3F" target="_blank" rel="noopener noreferrer" class="btn-primary !bg-white !text-charcoal !rounded-full">Ask About Menu →</a>
-                    
-                    <div class="flex items-center justify-center -space-x-3 mt-4 sm:mt-0">
-                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=100&q=70" loading="lazy" decoding="async" width="50" height="50" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" alt="Coffee">
-                        <img src="https://images.unsplash.com/photo-1481070555726-e2fe83477d15?w=100&q=70" loading="lazy" decoding="async" width="50" height="50" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" alt="Food">
-                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=100&q=70" loading="lazy" decoding="async" width="50" height="50" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" alt="Café Interior">
-                    </div>
+            <div class="cafe-content relative z-10 flex flex-col items-center justify-center text-center px-[20px] py-[60px] desktop:px-[40px] desktop:py-[80px] max-w-[640px] w-full fade-up">
+                <p class="font-dmsans text-[12px] font-semibold uppercase tracking-[0.14em] text-[#C9A96E] mb-[12px]" style="text-shadow: 0 1px 8px rgba(0,0,0,0.5);">Dine with a View</p>
+                <h2 class="font-playfair text-[28px] desktop:text-[44px] font-bold text-white" style="text-shadow: 0 2px 20px rgba(0,0,0,0.5);">Hippie Hangout Café</h2>
+                <p class="font-dmsans text-[16px] text-white mt-[16px] font-medium" style="text-shadow: 0 1px 10px rgba(0,0,0,0.6);">Sip fresh coffee in our 360° transparent glass café, where every meal is served with a panoramic view of the Himalayas.</p>
+                <p class="font-dmsans text-[14px] text-white/90 mt-[12px] font-medium" style="text-shadow: 0 1px 10px rgba(0,0,0,0.6);">Multi-cuisine · Open 8 AM — 8 PM · Inside Apple Orchards</p>
+                <div class="flex flex-row justify-center gap-[16px] mt-[32px]">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=200&q=70" loading="lazy" decoding="async" width="200" height="200" class="w-[72px] h-[72px] rounded-full border-2 border-white/60 object-cover shadow-[0_4px_12px_rgba(0,0,0,0.3)]" alt="Coffee Cup">
+                    <img src="https://images.unsplash.com/photo-1481070555726-e2fe83477d15?w=200&q=70" loading="lazy" decoding="async" width="200" height="200" class="w-[72px] h-[72px] rounded-full border-2 border-white/60 object-cover shadow-[0_4px_12px_rgba(0,0,0,0.3)]" alt="Sandwich Plate">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=200&q=70" loading="lazy" decoding="async" width="200" height="200" class="w-[72px] h-[72px] rounded-full border-2 border-white/60 object-cover shadow-[0_4px_12px_rgba(0,0,0,0.3)]" alt="Café Interior">
                 </div>
             </div>
         </section>
@@ -385,7 +377,7 @@
                 
                 <div class="exp-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card 1 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/wakeuptokailash.webp" loading="lazy" decoding="async" width="600" height="800" alt="Himalayan Sunrise at The Satluj" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
                             <h3 class="heading-4 !text-white mb-2">Wake Up to Kailash</h3>
@@ -393,7 +385,7 @@
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/appleorchard.webp" loading="lazy" decoding="async" width="600" height="800" alt="Apple Orchards on property" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
                             <h3 class="heading-4 !text-white mb-2">Apple Orchards</h3>
@@ -401,7 +393,7 @@
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/HHc.webp" loading="lazy" decoding="async" width="600" height="800" alt="Glass Walled Mountain Café" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
                             <h3 class="heading-4 !text-white mb-2">Glass Hangout Café</h3>
@@ -409,7 +401,7 @@
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/applewine.webp" loading="lazy" decoding="async" width="600" height="800" alt="Homemade local apple wine" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
                             <h3 class="heading-4 !text-white mb-2">Heritage Apple Wine</h3>
@@ -417,7 +409,7 @@
                         </div>
                     </div>
                     <!-- Card 5 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/trek.webp" loading="lazy" decoding="async" width="600" height="800" alt="Mountain Treks & Trails" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
                             <h3 class="heading-4 !text-white mb-2">Treks & Trails</h3>
@@ -425,7 +417,7 @@
                         </div>
                     </div>
                     <!-- Card 6 -->
-                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md">
+                    <div class="exp-card relative aspect-[3/4] rounded-[12px] overflow-hidden cursor-pointer group shadow-sm transition-all duration-300 hover:shadow-md fade-up-stagger">
                         <img src="assets/images/tse/readwrite.webp" loading="lazy" decoding="async" width="600" height="800" alt="Quiet time at The Satluj" class="exp-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 z-[1]">
                         <div class="exp-card-gradient absolute inset-0 z-[2]" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);"></div>
                         <div class="absolute bottom-6 left-6 right-6 z-[3]">
@@ -438,7 +430,7 @@
         </section>
 
         <!-- Attractions Section -->
-        <section id="attractions" class="section-padding bg-offwhite overflow-hidden">
+        <section id="attractions" class="section-padding bg-offwhite overflow-hidden fade-up">
             <div class="container-center">
                 <div class="text-center mb-[48px] desktop:mb-[64px]">
                     <p class="section-label mb-4">Explore Kinnaur</p>
@@ -449,10 +441,10 @@
                     <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-[24px] pb-[40px] -mx-[20px] px-[20px] desktop:mx-0 desktop:px-0">
                         
                         <!-- Card 1 -->
-                        <div id="featured-attraction" class="attr-card snap-start min-w-[280px] shrink-0 bg-white rounded-[12px] overflow-hidden shadow-sm border border-black/[0.05]">
+                        <div id="featured-attraction" class="attr-card snap-start min-w-[260px] desktop:min-w-[280px] desktop:max-w-[300px] shrink-0 bg-white rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-black/[0.04]">
                             <img src="assets/images/na/kalpa-monastery-himachal-pradesh.webp" loading="lazy" decoding="async" width="400" height="300" class="w-full h-[200px] object-cover" alt="Kalpa Monastery">
                             <div class="p-6">
-                                <h3 class="heading-4 !text-[17px] mb-4">Kalpa Monastery</h3>
+                                <h3 class="font-dmsans text-[16px] font-bold text-charcoal mb-2">Kalpa Monastery</h3>
                                 <div class="flex items-center gap-3">
                                     <span class="metadata !text-[11px] !bg-charcoal !text-white px-3 py-1 rounded-full uppercase tracking-wider">300m</span>
                                     <p class="body-text !text-[13px] text-meta flex items-center gap-1">
@@ -464,10 +456,10 @@
                         </div>
 
                         <!-- Card 2 -->
-                        <div class="attr-card snap-start min-w-[280px] desktop:min-w-[0] desktop:flex-1 shrink-0 bg-white rounded-[12px] overflow-hidden shadow-sm border border-black/[0.05]">
+                        <div class="attr-card snap-start min-w-[260px] desktop:min-w-[280px] desktop:max-w-[300px] shrink-0 bg-white rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-black/[0.04]">
                             <img src="assets/images/na/chandika-devi-temple-kothi.webp" loading="lazy" decoding="async" width="400" height="300" class="w-full h-[200px] object-cover" alt="Chandika Devi Temple">
                             <div class="p-6">
-                                <h3 class="heading-4 !text-[17px] mb-4">Chandika Devi Temple</h3>
+                                <h3 class="font-dmsans text-[16px] font-bold text-charcoal mb-2">Chandika Devi Temple</h3>
                                 <div class="flex items-center gap-3">
                                     <span class="metadata !text-[11px] !bg-charcoal !text-white px-3 py-1 rounded-full uppercase tracking-wider">300m</span>
                                     <p class="body-text !text-[13px] text-meta flex items-center gap-1">
@@ -479,10 +471,10 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="attr-card snap-start min-w-[280px] desktop:min-w-[0] desktop:flex-1 shrink-0 bg-white rounded-[12px] overflow-hidden shadow-sm border border-black/[0.05]">
+                        <div class="attr-card snap-start min-w-[260px] desktop:min-w-[280px] desktop:max-w-[300px] shrink-0 bg-white rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-black/[0.04]">
                             <img src="assets/images/na/chini-village-kalpa.webp" loading="lazy" decoding="async" width="400" height="300" class="w-full h-[200px] object-cover" alt="Chini Village">
                             <div class="p-6">
-                                <h3 class="heading-4 !text-[17px] mb-4">Chini Village</h3>
+                                <h3 class="font-dmsans text-[16px] font-bold text-charcoal mb-2">Chini Village</h3>
                                 <div class="flex items-center gap-3">
                                     <span class="metadata !text-[11px] !bg-charcoal !text-white px-3 py-1 rounded-full uppercase tracking-wider">300m</span>
                                     <p class="body-text !text-[13px] text-meta flex items-center gap-1">
@@ -494,10 +486,10 @@
                         </div>
 
                         <!-- Card 4 -->
-                        <div class="attr-card snap-start min-w-[280px] desktop:min-w-[0] desktop:flex-1 shrink-0 bg-white rounded-[12px] overflow-hidden shadow-sm border border-black/[0.05]">
+                        <div class="attr-card snap-start min-w-[260px] desktop:min-w-[280px] desktop:max-w-[300px] shrink-0 bg-white rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-black/[0.04]">
                             <img src="assets/images/na/suicide-point-kalpa.webp" loading="lazy" decoding="async" width="400" height="300" class="w-full h-[200px] object-cover" alt="Suicide Point">
                             <div class="p-6">
-                                <h3 class="heading-4 !text-[17px] mb-4">Suicide Point (Rolla)</h3>
+                                <h3 class="font-dmsans text-[16px] font-bold text-charcoal mb-2">Suicide Point (Rolla)</h3>
                                 <div class="flex items-center gap-3">
                                     <span class="metadata !text-[11px] !bg-charcoal !text-white px-3 py-1 rounded-full uppercase tracking-wider">5 km</span>
                                     <p class="body-text !text-[13px] text-meta flex items-center gap-1">
@@ -509,10 +501,10 @@
                         </div>
 
                         <!-- Card 5 -->
-                        <div class="attr-card snap-start min-w-[280px] desktop:min-w-[0] desktop:flex-1 shrink-0 bg-white rounded-[12px] overflow-hidden shadow-sm border border-black/[0.05]">
+                        <div class="attr-card snap-start min-w-[260px] desktop:min-w-[280px] desktop:max-w-[300px] shrink-0 bg-white rounded-[16px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-black/[0.04]">
                             <img src="assets/images/na/roghi-village-himachal-pradesh.webp" loading="lazy" decoding="async" width="400" height="300" class="w-full h-[200px] object-cover" alt="Roghi Village">
                             <div class="p-6">
-                                <h3 class="heading-4 !text-[17px] mb-4">Roghi Village</h3>
+                                <h3 class="font-dmsans text-[16px] font-bold text-charcoal mb-2">Roghi Village</h3>
                                 <div class="flex items-center gap-3">
                                     <span class="metadata !text-[11px] !bg-charcoal !text-white px-3 py-1 rounded-full uppercase tracking-wider">6 km</span>
                                     <p class="body-text !text-[13px] text-meta flex items-center gap-1">
@@ -537,21 +529,21 @@
                 </div>
                 
                 <div class="w-full columns-2 lg:columns-3 gap-6 space-y-6">
-                    <img src="assets/images/gos/deluxe-hotel-room-interior-kalpa-himachal-pradesh.webp" loading="lazy" decoding="async" width="800" height="1200" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" alt="Deluxe Room Interior">
-                    <img src="assets/images/gos/hotel-balcony-view-kinnaur-kailash-peaks-kalpa-himachal.webp" loading="lazy" decoding="async" width="800" height="600" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" alt="Kinnaur Kailash View from Balcony">
-                    <img src="assets/images/gos/sunrise-view-kinnaur-kailash-peak-kalpa-himachal.webp" loading="lazy" decoding="async" width="600" height="800" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" alt="First Light on Kinnaur Kailash">
-                    <img src="assets/images/gos/snow-covered-himalayan-hotel-exterior-kalpa-himachal.webp" loading="lazy" decoding="async" width="800" height="800" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" alt="Snow Covered Hotel Exterior">
-                    <img src="assets/images/gos/hippie-hangout-cafe-exterior-entrance-kalpa-himachal-pradesh.webp" loading="lazy" decoding="async" width="800" height="1000" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01]" alt="Hippie Hangout Café Entrance">
-                    <img src="assets/images/gos/moonlit-kinnaur-kailash-mountain-view-balcony-kalpa-himachal.webp" loading="lazy" decoding="async" width="600" height="600" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02]" alt="Moonlit Kinnaur Kailash">
-                    <img src="assets/images/gos/traditional-himachali-breakfast-paratha-omelet-kalpa-hotel.webp" loading="lazy" decoding="async" width="800" height="600" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02]" alt="Traditional Himachali Breakfast">
-                    <img src="assets/images/gos/himalayan-hotel-rainbow-view-kinnaur-kailash-kalpa.webp" loading="lazy" decoding="async" width="800" height="1200" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02]" alt="Rainbow over Kinnaur Kailash">
+                    <img src="assets/images/gos/deluxe-hotel-room-interior-kalpa-himachal-pradesh.webp" loading="lazy" decoding="async" width="800" height="1200" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01] fade-up-stagger" alt="Deluxe Room Interior">
+                    <img src="assets/images/gos/hotel-balcony-view-kinnaur-kailash-peaks-kalpa-himachal.webp" loading="lazy" decoding="async" width="800" height="600" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01] fade-up-stagger" alt="Kinnaur Kailash View from Balcony">
+                    <img src="assets/images/gos/sunrise-view-kinnaur-kailash-peak-kalpa-himachal.webp" loading="lazy" decoding="async" width="600" height="800" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01] fade-up-stagger" alt="First Light on Kinnaur Kailash">
+                    <img src="assets/images/gos/snow-covered-himalayan-hotel-exterior-kalpa-himachal.webp" loading="lazy" decoding="async" width="800" height="800" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01] fade-up-stagger" alt="Snow Covered Hotel Exterior">
+                    <img src="assets/images/gos/hippie-hangout-cafe-exterior-entrance-kalpa-himachal-pradesh.webp" loading="lazy" decoding="async" width="800" height="1000" class="gallery-img w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.01] fade-up-stagger" alt="Hippie Hangout Café Entrance">
+                    <img src="assets/images/gos/moonlit-kinnaur-kailash-mountain-view-balcony-kalpa-himachal.webp" loading="lazy" decoding="async" width="600" height="600" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02] fade-up-stagger" alt="Moonlit Kinnaur Kailash">
+                    <img src="assets/images/gos/traditional-himachali-breakfast-paratha-omelet-kalpa-hotel.webp" loading="lazy" decoding="async" width="800" height="600" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02] fade-up-stagger" alt="Traditional Himachali Breakfast">
+                    <img src="assets/images/gos/himalayan-hotel-rainbow-view-kinnaur-kailash-kalpa.webp" loading="lazy" decoding="async" width="800" height="1200" class="gallery-img masonry-item inline-block w-full rounded-[12px] cursor-pointer bg-gray-100 transition-all duration-300 hover:brightness-105 hover:scale-[1.02] fade-up-stagger" alt="Rainbow over Kinnaur Kailash">
                 </div>
                 
                 <button class="btn-secondary mt-[40px] focus:outline-sky">View All Photos →</button>
             </div>
             
             <!-- GALLERY LIGHTBOX -->
-            <div id="gallery-lightbox" class="fixed inset-0 bg-black/92 z-[400] hidden flex-col items-center justify-center touch-none transition-opacity duration-300 opacity-0">
+            <div id="gallery-lightbox" class="fixed inset-0 bg-black/92 z-[400] hidden items-center justify-center touch-none transition-opacity duration-300 opacity-0" style="display: none;">
                 <button id="lightbox-close" class="absolute top-4 right-4 w-[44px] h-[44px] text-white text-[24px] flex items-center justify-center hover:text-[#C9A96E] transition-colors focus:outline-sky z-[410]" aria-label="Close Lightbox">✕</button>
                 
                 <button id="lightbox-prev" class="absolute left-2 desktop:left-8 top-1/2 -translate-y-1/2 w-[48px] h-[48px] rounded-full bg-white/10 hover:bg-white/20 text-white text-[24px] flex items-center justify-center transition-colors focus:outline-sky z-[410] select-none" aria-label="Previous Image">‹</button>
@@ -563,7 +555,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="section-padding bg-offwhite overflow-hidden">
+        <section id="testimonials" class="section-padding bg-offwhite overflow-hidden fade-up">
             <div class="container-center">
                 <div class="text-center mb-[48px] desktop:mb-[64px]">
                     <p class="section-label mb-4">Guest Book</p>
@@ -651,7 +643,7 @@
         </section>
 
         <!-- Location Section -->
-        <section id="location" class="section-padding bg-white">
+        <section id="location" class="section-padding bg-white fade-up">
             <div class="container-center">
                 <div class="flex flex-col lg:flex-row gap-12 bg-offwhite rounded-[20px] p-6 desktop:p-12 shadow-sm border border-black/[0.05]">
                     
@@ -786,11 +778,8 @@
     <a href="https://wa.me/919874068999" id="wa-btn" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[450] w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 group" aria-label="Chat with us on WhatsApp">
         <svg viewBox="0 0 448 512" class="w-7 h-7 fill-white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.4 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.7 5.5-9.4 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
         <span class="absolute right-full mr-4 bg-charcoal text-white text-[12px] py-1 px-3 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none whitespace-nowrap">WhatsApp Us</span>
-    </a>    <!-- GSAP CDN (EXACT LINKS AS REQUESTED) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- Main JS -->
-    <script src="js/main.js?v=1.0.1"></script>
+    </a>    <!-- Main JS -->
+    <script src="js/main.js?v=1.1.0"></script>
     <!-- Loader Logic Inline (To run immediately) -->
     <script>
         const loader = document.getElementById('loader-screen');
